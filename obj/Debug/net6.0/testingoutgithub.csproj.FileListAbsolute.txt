@@ -1,0 +1,15 @@
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.csproj.AssemblyReference.cache
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.AssemblyInfoInputs.cache
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.AssemblyInfo.cs
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.csproj.CoreCompileInputs.cache
+/Users/eric/Documents/Code/cse210/testingoutgithub/bin/Debug/net6.0/testingoutgithub
+/Users/eric/Documents/Code/cse210/testingoutgithub/bin/Debug/net6.0/testingoutgithub.deps.json
+/Users/eric/Documents/Code/cse210/testingoutgithub/bin/Debug/net6.0/testingoutgithub.runtimeconfig.json
+/Users/eric/Documents/Code/cse210/testingoutgithub/bin/Debug/net6.0/testingoutgithub.dll
+/Users/eric/Documents/Code/cse210/testingoutgithub/bin/Debug/net6.0/testingoutgithub.pdb
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.dll
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/refint/testingoutgithub.dll
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.pdb
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/testingoutgithub.genruntimeconfig.cache
+/Users/eric/Documents/Code/cse210/testingoutgithub/obj/Debug/net6.0/ref/testingoutgithub.dll
