@@ -38,15 +38,41 @@
 // }
 
 int[] positions = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-string[] character = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+// string[] character = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+string[] character = {"1", "1", "1", "4", "5", "6", "7", "8", "9"};
 string input = "0";
 string Xoro = "O";
 int userschoice = 10;
 string exit = "no";
+int[] checkwinnums = {123,456,789,147,257,369,159,753};
+
+
+
 void main()
 {
+    Checkwin();
     DoStuff();
 }
+
+
+ void Checkwin()
+{
+    foreach(int win in checkwinnums)
+    {
+        int win1 = (win /100);
+        int win2 = (win - win1) /10;
+        int win3 = (win - (win1 + win2)) / 1;
+
+        if (character[win1-1] == character[win2-1] && character[win2-1] == character[win3-1]){
+            Console.WriteLine("it worked");
+            exit = "yes";
+            }
+
+    }
+
+        
+}
+
 
 void DoStuff()
 // This is the main game, what You play
@@ -62,18 +88,15 @@ void DoStuff()
             }
         }
         Getplacement();
-        character[userschoice] = Xoro;
-        if(character[0] == character[1] && character[2] == character[1])
-        {
-            exit = "yes";
-        }
+        character[Getplacement()] = Xoro;
+        Checkwin();
     }
 }
 
-void Getplacement()
-// Gets the users input and toggles the different X/O
+string Getturn()
+// Togggling Xoro to show the proper persons turn.
 {
-    if (Xoro == "O")
+        if (Xoro == "O")
     {
         Xoro = "X";
     }
@@ -81,15 +104,24 @@ void Getplacement()
     {
         Xoro = "O";
     }
-    Console.WriteLine("\nPlease put in a in a number for place. It's " + Xoro + " turn.");
+    return Xoro;
+}
+
+int Getplacement()
+// Gets the users input and toggles the different X/O
+{
+
+    Console.WriteLine("\nPlease put in a in a number for place. It's " + Getturn() + " turn.");
     input = Console.ReadLine();
     userschoice = (Convert.ToInt32(input)-1);
 
-    while (character[userschoice] == "X" || character[userschoice] == "O"){
+    while (character[userschoice] == "X" || character[userschoice] == "O")
+    {
         Console.WriteLine("\nThat was an invalid number. Please put in a in a number for place. It's " + Xoro + " turn.");
         input = Console.ReadLine();
         userschoice = Convert.ToInt32(input)-1;
     }
+    return userschoice;
     // Console.WriteLine(input);
 }
 
