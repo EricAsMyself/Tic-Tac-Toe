@@ -10,20 +10,16 @@ int[] checkwinnums = {123,456,789,147,257,369,159,753};
 
 
 
- static void main()
+void main()
 {
-    while (exit == "no"){
-        Printboard();
-        character[Getuserplacement()] = Togglexando();
-        Checkwin();
-        Togglexando();
-    }
+    Printboard();
 }
 
 void Printboard()
 // This is the main game, what You play
 {
-
+    while (exit == "no")
+    {
         Console.WriteLine("\n");
         foreach (int lines in positions)
         {
@@ -32,7 +28,10 @@ void Printboard()
                 Console.WriteLine("\n-------");
             }
         }
-
+        // Getplacement();
+        character[Getuserplacement()] = Xoro;
+        Checkwin();
+    }
 }
 
 string Togglexando()
