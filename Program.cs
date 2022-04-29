@@ -1,4 +1,7 @@
-﻿
+﻿// Author: Eric Poole
+// Teacher: Matt Manley
+//
+// A simple game of tic tac toe, for objective programing.
 
 int[] positions = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 string[] character = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
@@ -7,30 +10,34 @@ string Xoro = "O";
 int userschoice = 10;
 string exit = "no";
 int[] checkwinnums = {123,456,789,147,257,369,159,753};
+int count = 0;
 
 
 
 void main()
 {
-    Printboard();
+    while (exit == "no"){
+        Printboard();
+        Console.WriteLine("\n");
+        character[Getuserplacement(Togglexando())] = Xoro;
+        count = count + 1;
+        Checkwin();
+    }
 }
 
 void Printboard()
 // This is the main game, what You play
 {
-    while (exit == "no")
+    Console.WriteLine("\n");
+    foreach (int lines in positions)
     {
-        Console.WriteLine("\n");
-        foreach (int lines in positions)
-        {
-            Console.Write(character[lines - 1] + "|");
-            if (lines % 3 == 0 && lines < 9){
-                Console.WriteLine("\n-------");
-            }
+        Console.Write(character[lines - 1]);
+        if (lines % 3 == 0 && lines < 9){
+            Console.WriteLine("\n-+-+-");
         }
-        // Getplacement();
-        character[Getuserplacement()] = Xoro;
-        Checkwin();
+        else if(lines % 3 != 0){
+            Console.Write("|");
+        }
     }
 }
 
@@ -48,11 +55,11 @@ string Togglexando()
     return Xoro;
 }
 
-int Getuserplacement()
+int Getuserplacement(string Usertoggle)
 // Gets the users input and toggles the different X/O
 {
     
-    Console.WriteLine("\nPlease put in a in a number for place. It's " + Togglexando() + " turn.");
+    Console.WriteLine("\nPlease put in a in a number for place. It's " + Usertoggle + " turn.");
     input = Console.ReadLine();
     userschoice = (Convert.ToInt32(input)-1);
 
@@ -63,10 +70,10 @@ int Getuserplacement()
         userschoice = Convert.ToInt32(input)-1;
     }
     return userschoice;
-    // Console.WriteLine(input);
 }
 
  void Checkwin()
+// Checks to see if the game is done.
 {
     foreach(int win in checkwinnums)
     {
@@ -78,7 +85,12 @@ int Getuserplacement()
             Console.WriteLine("it worked");
             exit = "yes";
             }
-    }   
+    }
+    if(count == 9)
+    {
+        Console.WriteLine("Oops looks like a draw");
+        exit = "yes";
+    }  
 }
 
 main();
